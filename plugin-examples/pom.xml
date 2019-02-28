@@ -80,12 +80,6 @@
       <version>1.1.1</version>
     </dependency>
     <!-- only used by the hydra client-->
-    <dependency>
-      <groupId>com.github.ory</groupId>
-      <artifactId>hydra-client-resttemplate</artifactId>
-      <version>1.0.0</version>
-      <scope>compile</scope>
-    </dependency>
 
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>

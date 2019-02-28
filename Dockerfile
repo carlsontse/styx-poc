@@ -6,10 +6,9 @@ ENV CONFIG_PATH=/conf
 WORKDIR ${STYX_HOME}
 
 
-COPY styx-1.0-SNAPSHOT-linux-x86_64.zip ${STYX_HOME}/styx.zip
+COPY distribution/target/styx-1.0-SNAPSHOT-osx-x86_64.zip ${STYX_HOME}/styx.zip
 
-
-RUN unzip styx.zip \
+RUN unzip ${STYX_HOME}/styx.zip \
     && mv styx-1.0-SNAPSHOT styx \
     && rm styx.zip \
     && mkdir -p default-config \
