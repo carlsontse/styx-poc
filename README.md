@@ -6,9 +6,7 @@ Styx config overriding the file routing reading w/ graphql [here](https://github
 
 The graphql plugin-example is a hack, we can totally make Styx take a plugin for reading routes as well..
 
-If you make changes in 'plugin-example', you need to clean and deploy it first since it's not part of the 'make e2e'.
-However, the Styx Proxy module needs to take that updated jar.
-
+Any changes made to the ory/hydra plugin will need to be rebuilt and jar copied over to the styx project and checked in since i'm relying on it for the docker image. I know it's ugly but it's how Styx is loading the plugins, can probably have the Docker file get it from artylab possibly. 
 
 1. Deploy the 'plugin-example' which contains the graphql control plane reader
 ```bash
