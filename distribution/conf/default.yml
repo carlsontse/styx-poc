@@ -6,13 +6,13 @@ proxy:
   connectors:
     http:
       port: 8089
-    https:
-      port: 8443
-      sslProvider: OPENSSL # Also supports JDK
-      certificateFile: ${STYX_HOME:classpath:}/conf/tls/testCredentials.crt
-      certificateKeyFile: ${STYX_HOME:classpath:}/conf/tls/testCredentials.key
-      sessionTimeoutMillis: 300000
-      sessionCacheSize: 20000
+    #https:
+    #  port: 8083
+    #  sslProvider: OPENSSL # Also supports JDK
+    #  certificateFile: ${STYX_HOME:classpath:}/conf/tls/testCredentials.crt
+    #  certificateKeyFile: ${STYX_HOME:classpath:}/conf/tls/testCredentials.key
+    #  sessionTimeoutMillis: 300000
+    #  sessionCacheSize: 20000
   bossThreadsCount: 1
   clientWorkerThreadsCount: 0
   workerThreadsCount: 0
@@ -52,7 +52,7 @@ plugins:
     oryhydraplugin:
       factory:
         class: "com.expediagroup.styx.plugin.OryHydraPluginFactory"
-        classPath: "/Users/ctse/src/ory-hydra-styx-plugin/target/ory-hydra-styx-plugin-0.0.1-jar-with-dependencies.jar"
+        classPath: "/ory-hydra-styx-plugin-0.0.1-jar-with-dependencies.jar"
       config:
         requestHeaderValue: "requestheader"
         responseHeaderValue: "responseheader"

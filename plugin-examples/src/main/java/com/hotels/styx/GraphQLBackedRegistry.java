@@ -109,7 +109,8 @@ public class GraphQLBackedRegistry<T extends Identifiable> extends AbstractRegis
                 HttpClient httpclient = HttpClients.createDefault();
 
                 URIBuilder builder = new URIBuilder();
-                builder.setScheme("http").setHost("localhost:4000").setPath("/graphql")
+                LOG.info("Connecting to graphql: 192.168.99.100:4000");
+                builder.setScheme("http").setHost("192.168.99.100:4000").setPath("/graphql")
                         .setParameter("query", "{routes {id path upstream{uri}}}");
 
                 URI uri = builder.build();

@@ -22,7 +22,7 @@ unit-test:
 PLATFORM=macosx
 ## Compile, run unit tests, checkstyle and integration tests
 e2e:
-	mvn clean -Dmaven.test.skip=true  verify -Pquality,release,$(PLATFORM)
+	mvn clean -Dmaven.test.skip=true verify -Pquality,release,$(PLATFORM)
 
 ## Compile code and tests but do not run
 # Note: Pre-integration test phase is necessary to produce styx.properties file
