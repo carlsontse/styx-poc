@@ -9,15 +9,25 @@ The graphql plugin-example is a hack, we can totally make Styx take a plugin for
 If you make changes in 'plugin-example', you need to clean and deploy it first since it's not part of the 'make e2e'.
 However, the Styx Proxy module needs to take that updated jar.
 
-Do something like the below to create an image
+
+1. Deploy the 'plugin-example' which contains the graphql control plane reader
+```bash
+cd plugin-examples
+mvn clean deploy
+``
+
+2. Generate the distribution (get out of the plugin-examples folder)
+```bash
+cd ..
+make e2e
+````
+
+3. Do something like the below to create an image
 ```bash
 docker build . -t styx
 ``` 
 
-Do something like the below to run it
-```bash
-docker run -p 8089:8089 -p 9000:9000 styx
-```
+4. Use the docker compose here which will start the above image up plus Ory/Hydra and the Traffic Director Poc: https://github.expedia.biz/EGPlatform/apigateway-docker-compose-poc 
 
 Right now for the poc:
 * Everything (graphql server, orly-hydra-styx-plugin) is hardcoded for **192.168.99.100** instead of localhost because assuming you are using a Mac, Docker will use this address.
